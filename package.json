@@ -51,7 +51,7 @@
 		"@biomejs/biome": "2.2.6",
 		"@commitlint/cli": "^20.1.0",
 		"@commitlint/config-conventional": "^20.0.0",
-		"@smithery/cli": "^1.4.6",
+		"@smithery/cli": "^3.1.0",
 		"@types/node": "^24.8.0",
 		"husky": "^9.1.7",
 		"knip": "^5.65.0",
@@ -65,32 +65,34 @@
 		"type": "git",
 		"url": "git+https://github.com/LinkupPlatform/linkup-mcp-server.git"
 	},
-  "release": {
-    "branches": [
-      "main"
-    ],
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/npm",
-      [
-        "@semantic-release/github",
-        {
-          "assets": [
-            {
-              "path": "mcpb/linkup-mcp-server.mcpb",
-              "label": "MCPB Bundle"
-            }
-          ],
-          "failTitle": "The automated release is failing 🚨",
-          "failComment": false,
-          "labels": false,
-          "releasedLabels": false
-        }
-      ]
-    ]
-  },
-  "commitlint": {
-    "extends": ["@commitlint/config-conventional"]
-  }
+	"release": {
+		"branches": [
+			"main"
+		],
+		"plugins": [
+			"@semantic-release/commit-analyzer",
+			"@semantic-release/release-notes-generator",
+			"@semantic-release/npm",
+			[
+				"@semantic-release/github",
+				{
+					"assets": [
+						{
+							"path": "mcpb/linkup-mcp-server.mcpb",
+							"label": "MCPB Bundle"
+						}
+					],
+					"failTitle": "The automated release is failing 🚨",
+					"failComment": false,
+					"labels": false,
+					"releasedLabels": false
+				}
+			]
+		]
+	},
+	"commitlint": {
+		"extends": [
+			"@commitlint/config-conventional"
+		]
+	}
 }
